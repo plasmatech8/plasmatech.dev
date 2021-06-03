@@ -1,13 +1,12 @@
 import React from "react";
 import '../styles/DummyContent.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function DummyContent() {
   return (
     <div>
       <main>
         <header>
-          <button id="btn-freecam">Free-Cam Mode</button>
-          <button id="btn-bgonly">Background-Only Mode</button>
           <h1>Mark Connelly</h1>
           <p>🚀 Welcome to my website!</p>
         </header>
