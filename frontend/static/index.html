@@ -2,14 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/src/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% load static %}
     <title>Vite App</title>
-    <link rel="icon" type="image/png" href="{% static "assets/favicon.png" %}" />
-    <script type="module" crossorigin src="{% static "assets/index.js" %}"></script>
-    <link rel="modulepreload" href="{% static "assets/vendor.js" %}">
-    <link rel="stylesheet" href="{% static "assets/index.css" %}">
-  </head>
+  <script type="module" crossorigin src="/assets/index.js"></script>
+  <link rel="modulepreload" href="/assets/vendor.js">
+  <link rel="stylesheet" href="/assets/index.css">
+</head>
   <body>
 
   <canvas id="bg"></canvas>
@@ -20,6 +19,6 @@
       <button id="btn-freecam" >Free-Cam Mode</button>
     </div>
   </main>
-
+  
   </body>
 </html>
