@@ -128,4 +128,8 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+# Front-end files
 node_modules
+frontend/static/assets/index.css
+frontend/static/assets/index.js
+frontend/static/assets/vendor.js
