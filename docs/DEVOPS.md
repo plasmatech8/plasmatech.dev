@@ -1,6 +1,8 @@
 # Devops Infrastructure
 
-> TODO: Remove YAML and put them into a scripts/ file
+This describes the details around deployment and infrastructure.
+
+Most importantly, details instructions for the updating the SSL certificate.
 
 Uses:
 * Kubernetes (LKE on Linode)
@@ -36,35 +38,13 @@ sudo cat /etc/letsencrypt/live/plasmatech.dev/privkey.pem
 sudo cat /etc/letsencrypt/live/plasmatech.dev/fullchain.pem
 ```
 
-## K8 Pods Deployment
+## K8 Pods
 
 Deployment (for webservers)
+* Configured to expose port 8080.
+* Uses docker container `plasmatech8/plasmatech-webserver`
 
-```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: networkchuckcoffee-deployment
-  labels:
-    app: nccoffee
-spec:
-  replicas: 3
-  selector:
-    matchLabels:
-      app: nccoffee
-  template:
-    metadata:
-      labels:
-        app: nccoffee
-    spec:
-      containers:
-      - name: nccoffee
-        image: thenetworkchuck/nccoffee:pourover
-        imagePullPolicy: Always
-        ports:
-        - containerPort: 80
-
-```
+See [scripts/plasmatech_deployment.yaml](scripts/plasmatech_deployment.yaml)
 
 ## K8 Secret TLS
 
@@ -80,34 +60,12 @@ sudo kubectl create secret tls ssl-cert-secret \
     --key /etc/letsencrypt/live/plasmatech.dev/privkey.pem
 ```
 
-
 ## K8 Load Balancer
 
-We can create our load balancer, including additional parameters for the secret for the certificate:
+We can create our load balancer, including additional parameters for the secret for the
+certificate.
 
-```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: coffee-service
-  annotations:
-    service.beta.kubernetes.io/linode-loadbalancer-throttle: "4"
-    service.beta.kubernetes.io/linode-loadbalancer-default-protocol: http
-    service.beta.kubernetes.io/linode-loadbalancer-port-443: '{ "tls-secret-name": "ssl-cert-secret", "protocol": "https" }'
-  labels:
-    app: coffee-service
-spec:
-  type: LoadBalancer
-  ports:
-  - name: https
-    port: 443
-    protocol: TCP
-    targetPort: 80
-  selector:
-    app: nccoffee
-  sessionAffinity: None
-
-```
+See [scripts/plasmatech_service.yaml](scripts/plasmatech_service.yaml)
 
 Once we deploy our load balancer, it will be given a public IP address.
 

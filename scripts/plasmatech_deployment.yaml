@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: plasmatech-deployment
+  labels:
+    app: plasmatech-webserver
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: plasmatech-webserver
+  template:
+    metadata:
+      labels:
+        app: plasmatech-webserver
+    spec:
+      containers:
+      - name: plasmatech-webserver
+        image: plasmatech8/plasmatech-webserver
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
