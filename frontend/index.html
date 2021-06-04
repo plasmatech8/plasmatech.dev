@@ -7,16 +7,18 @@
     <title>Mark Connelly</title>
   </head>
   <body>
+
   <!-- This HTML file is only used for debugging the frontend using the dev server -->
   <!-- See templates/index.html for the template rendered by the server -->
 
   <canvas id="bg"></canvas>
+  <div id="note">( left click to rotate | scroll wheel to zoom | right click to pan )</div>
   <main id="main">
-    <div id="app"></div>
-    <div style="position:absolute">
+    <div>
       <button id="btn-bgonly" class="btn">Background-Only Mode</button>
       <button id="btn-freecam" class="btn">Free-Cam Mode</button>
     </div>
+    <div id="app"></div>
   </main>
   <script type="module" src="/src/main.tsx"></script>
 

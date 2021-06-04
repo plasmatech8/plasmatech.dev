@@ -9,9 +9,10 @@ let free  = false;
 const freecamBtn = <HTMLElement>document.getElementById('btn-freecam')
 const bgonlyBtn =  <HTMLElement>document.getElementById('btn-bgonly')
 const mainElement = <HTMLElement>document.getElementById('main')
+const noteElement = <HTMLElement>document.getElementById('note')
 freecamBtn.addEventListener('click', () => {
-  mainElement.style.display = 'none'
   mainElement.remove()
+  noteElement.style.display = 'inline'
   free = true
 })
 bgonlyBtn.addEventListener('click', () => {
@@ -160,7 +161,7 @@ const mars = new THREE.Mesh(
     map: new THREE.TextureLoader().load('static/assets/mars/2k_mars.jpg')
   })
 )
-mars.position.set(-250, 5, -5)
+mars.position.set(-190, 5, 5)
 scene.add(mars)
 
 // Swordsman
@@ -171,7 +172,7 @@ const swordsman = new THREE.Mesh(
   })
 )
 swordsman.scale.set(1, 1, 1)
-swordsman.position.set(-100, -4, 25)
+swordsman.position.set(-60, -4, 25)
 swordsman.rotation.set(-Math.PI*0.5, 0, 0)
 scene.add(swordsman)
 const swordsmanLight = new THREE.PointLight(0xffffff, 1, 20)
