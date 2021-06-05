@@ -15,3 +15,4 @@ Build and deployment details are described in `DEPLOYMENT.md`
 
 * Update template to include CSRF token
 * Add REST endpoints using Django REST Framework
+* Use CI/CD

@@ -15,7 +15,9 @@ Make sure that:
 * `whitenoise` middleware is installed to ensure that valid mime types are corrected in the production server
 * `ALLOWED_HOSTS` is set in the settings
 
-Run gunicorn server: `gunicorn plasmatech.wsgi`
+Run Django dev server: `python manage.py runserver`
+
+Run Gunicorn prod server: `gunicorn plasmatech.wsgi`
 
 If you get a 'connection in use' error, consider using command: `sudo fuser -k 8000/tcp` to kill
 the process.
@@ -25,7 +27,7 @@ the process.
 Build and push container to the DockerHub registry:
 ```bash
 docker build . -t plasmatech8/plasmatech-webserver
-docker push plasmatech8/plasmatech-webserver`
+docker push plasmatech8/plasmatech-webserver
 ```
 
 Test the built container container:
@@ -39,8 +41,8 @@ Make sure TLS certificate is valid as per DEVOPS.md.
 
 We can run the command to create/update k8 service/deployments:
 ```bash
-kubectl apply -f plasmatech_service.yaml
-kubectl apply -f plasmatech_deployment.yaml
+kubectl apply -f scripts/plasmatech_service.yaml
+kubectl apply -f scripts/plasmatech_deployment.yaml
 ```
 
 If you have uploaded a new Docker container, but did not modify the deployment files, you can use:
