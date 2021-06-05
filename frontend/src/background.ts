@@ -9,13 +9,16 @@ let free  = false;
 const freecamBtn = <HTMLElement>document.getElementById('btn-freecam')
 const bgonlyBtn =  <HTMLElement>document.getElementById('btn-bgonly')
 const mainElement = <HTMLElement>document.getElementById('main')
-const noteElement = <HTMLElement>document.getElementById('note')
+const freeNoteElement = <HTMLElement>document.getElementById('freecam-note')
+const freeBackElement = <HTMLElement>document.getElementById('freecam-back')
 freecamBtn.addEventListener('click', () => {
   mainElement.remove()
-  noteElement.style.display = 'inline'
+  freeNoteElement.style.display = 'inline'
+  freeBackElement.style.display = 'inline'
   free = true
 })
 bgonlyBtn.addEventListener('click', () => {
+  freeBackElement.style.display = 'inline'
   mainElement.style.opacity = '0'
 })
 if(free) { // If free when script is loaded
@@ -161,7 +164,7 @@ const mars = new THREE.Mesh(
     map: new THREE.TextureLoader().load('static/assets/mars/2k_mars.jpg')
   })
 )
-mars.position.set(-190, 5, 5)
+mars.position.set(-190, 6, 4)
 scene.add(mars)
 
 // Swordsman

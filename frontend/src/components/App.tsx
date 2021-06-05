@@ -187,8 +187,8 @@ function App() {
                   <div className="card-body">
                     <h5 className="card-title">A Chess Exercise</h5>
                     <p className="card-text bg-color-">
-                      I created a Knight-And-Queen puzzle using
-                      <a href="https://svelte.dev/"> Svelte JS</a>.
+                      I created a Knight-And-Queen puzzle using{' '}
+                      <a href="https://svelte.dev/">Svelte JS</a>.
                     </p>
                     <p className="card-text">
                       You can try it out{" "}
@@ -252,13 +252,13 @@ function App() {
                     <h5 className="card-title">Cloud Decision Tool Site</h5>
                     <div className="card-text">
                       <p>
-                      I worked in a student team for our Software-Engineering capstone project
-                      for University.
+                      I worked in a student team for our Software-Engineering project
+                      at University.
                       </p>
                       <p>
                       This involved creating a website using React/Firebase and implementing a
                       Case Based Reasoning (CBR) algorithm defined by a
-                      PHD student into a microservice.
+                      PHD student.
                       </p>
                       <p className="card-text">
                       You can check it out{" "}

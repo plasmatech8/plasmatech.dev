@@ -14,9 +14,20 @@ main {
     color: white;
 }
 
-#note {
+#freemcam-header {
     position: fixed;
     padding: 0.5rem;
-    color: grey;
+    z-index: 100;
+}
+
+#freecam-note {
+    margin-left: 2rem;
+    color: rgb(50, 50, 50);
     display: none;
+    user-select: none;
+}
+
+#freecam-back {
+    display: none;
+    color: rgb(70, 70, 70);
 }
