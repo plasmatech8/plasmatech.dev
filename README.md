@@ -19,7 +19,7 @@ This site was built using:
   * Kubernetes (orchestration)
   * Linode (cloud platform)
 
-See `docs/` for details around build/deployment
+See `docs/` for details around build/deployment.
 
 ## Author
 

@@ -8,3 +8,7 @@ The front-end uses:
 * Vite (module bundler)
 
 Build and deployment details are described in `DEPLOYMENT.md`
+
+## To Consider
+
+* Update front-end to use React-Router
