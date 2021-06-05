@@ -16,3 +16,5 @@ Build and deployment details are described in `DEPLOYMENT.md`
 * Update template to include CSRF token
 * Add REST endpoints using Django REST Framework
 * Use CI/CD
+* Use K8 configmap for ALLOWED_HOSTS and DEBUG
+* Use K8 secret for SECRET_KEY
