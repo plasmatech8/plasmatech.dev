@@ -6,3 +6,5 @@ The front-end uses:
 * Bootstrap
 * Typescript
 * Vite (module bundler)
+
+Build and deployment details are described in `DEPLOYMENT.md`

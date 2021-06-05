@@ -19,7 +19,7 @@ Registered on Google Domains.
 
 Then name servers are set to Linode name servers (e.g. `ns5.linode.com`)
 
-Then we can add the domain in the Linode Domains dashboard and add records.
+Then we can add the domain in the Linode Domains dashboard and add DNS records.
 
 ## SSL/TLS Certificate
 

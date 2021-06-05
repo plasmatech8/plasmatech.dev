@@ -2,37 +2,34 @@
 
 This describes required steps for deployment.
 
-Note: TLS certificate is described  in DEVOPS.md
+Note: Other requirements such as TLS certificate is described in `DEVOPS.md`
 
-## Before deploying: Collect Static files
+## Quick test: build & run the production server locally
 
-Make sure STATIC_ROOT and STATIC_URL are set in the settings.
+To run the application locally we first need to:
+* Build the front-end React app: `cd frontend && npm run build`
+* Collect static files using: `python manage.py collectstatic`
 
-We need to collect static files using: `python manage.py collectstatic`
-
-Make sure that the whitenoise middleware is installed to ensure that valid mime types are corrected in the production server.
-
-Make sure that ALLOWED_HOSTS is set in the settings.
-
-## Quick test: Running the production server
+Make sure that:
+* `STATIC_ROOT` and `STATIC_URL` are set in the settings
+* `whitenoise` middleware is installed to ensure that valid mime types are corrected in the production server
+* `ALLOWED_HOSTS` is set in the settings
 
 Run gunicorn server: `gunicorn plasmatech.wsgi`
 
 If you get a 'connection in use' error, consider using command: `sudo fuser -k 8000/tcp` to kill
 the process.
 
-## Containerisation
+## Build Docker Image
 
-Build container: `docker build . -t plasmatech8/plasmatech-webserver`
-
-Push container: `docker push plasmatech8/plasmatech-webserver`
-
-Test container: `docker run -it --rm -p 8080:8080 plasmatech8/plasmatech-webserver`
-
-We can test the overall build process with these commands:
+Build and push container to the DockerHub registry:
 ```bash
-docker build .. -t plasmatech8/plasmatech-webserver
-docker push plasmatech8/plasmatech-webserver
+docker build . -t plasmatech8/plasmatech-webserver
+docker push plasmatech8/plasmatech-webserver`
+```
+
+Test the built container container:
+```bash
 docker run -it --rm -p 8080:8080 plasmatech8/plasmatech-webserver
 ```
 
@@ -44,4 +41,9 @@ We can run the command to create/update k8 service/deployments:
 ```bash
 kubectl apply -f plasmatech_service.yaml
 kubectl apply -f plasmatech_deployment.yaml
+```
+
+If you have uploaded a new Docker container, but did not modify the deployment files, you can use:
+```bash
+kubectl delete pods -l app=plasmatech-webserver
 ```
