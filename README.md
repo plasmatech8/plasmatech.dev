@@ -5,19 +5,21 @@ A personal website for Mark Connelly (plasmatech8).
 See the website [here](https://plasmatech.dev).
 
 This site was built using:
-* Frontend
+* Front-end
   * ReactJs (interface library)
   * ThreeJS (3D graphics)
   * Vite (module bundler)
   * Bootstrap (CSS framework)
   * TypeScript (programming language)
-* backend
+* Back-end
   * Django (webserver)
   * Gunicorn (production server)
 * Infrastructure
   * Docker (containerisation)
   * Kubernetes (orchestration)
   * Linode (cloud platform)
+  * Certbot (SSL/TLS)
+  * Google Domains (registrar)
 
 See `docs/` for details around build/deployment.
 
