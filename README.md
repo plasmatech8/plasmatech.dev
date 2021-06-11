@@ -21,27 +21,20 @@ This site was built using:
   * Certbot (SSL/TLS)
   * Google Domains (registrar)
 
-See `docs/` for details around build/deployment.
+See [docs/](docs/) for implementation details and guides.
+
+## Getting Started
+
+To simply run the Docker image of this application:
+* You can pull and run Docker image from Dockerhub using the command: `docker run -it --rm -p 8080:8080 plasmatech8/plasmatech-webserver`
+* Then navigate to `localhost:8080` in your browser.
+
+See [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md) for a guide on how to build the application locally.
 
 ## Author
 
 Mark Connelly (plasmatech8)
 
-## Resources
+## Assets
 
-Assets:
-* Space images sourced from [Solar Textures](https://www.solarsystemscope.com/textures/)
-
-Learning Materials (special thanks):
-* [Three.js Beginner’s Tutorial](https://www.youtube.com/watch?v=Q7AOvWpIVHU) by Fireship on YouTube
-* [You need to learn Kubernetes RIGHT NOW!!](https://www.youtube.com/watch?v=7bA0gTroJjw) by NetworkChuck on YouTube
-* [Learn Docker in 7 Easy Steps - Full Beginner's Tutorial](https://www.youtube.com/watch?v=gAkwW2tuIqE) by Fireship on YouTube
-* [Docker Tutorial for Beginners](https://www.youtube.com/watch?v=fqMOX6JJhGo) by FreeCodeCamp on YouTube
-* [Python Django Web Framework - Full Course for Beginners](https://www.youtube.com/watch?v=F5mRW0jo-U4) by FreeCodeCamp on YouTube
-* [Django & React Tutorial](https://www.youtube.com/watch?v=JD-age0BPVo) by Tech With Tim on YouTube
-
-Practice Repos:
-* [plasmatech8 / docker-practice](https://github.com/plasmatech8/docker-practice)
-* [plasmatech8 / django-practice](https://github.com/plasmatech8/django-practice)
-* [plasmatech8 / threejs-practice](https://github.com/plasmatech8/threejs-practice)
-* [plasmatech8 / react-practice](https://github.com/plasmatech8/react-practice)
+Space images sourced from [Solar Textures](https://www.solarsystemscope.com/textures/)

@@ -10,7 +10,7 @@ To run the application locally we first need to:
 * Build the front-end React app: `cd frontend && npm run build`
 * Collect static files using: `python manage.py collectstatic`
 
-Make sure that:
+Check that:
 * `STATIC_ROOT` and `STATIC_URL` are set in the settings
 * `whitenoise` middleware is installed to ensure that valid mime types are corrected in the production server
 * `ALLOWED_HOSTS` is set in the settings
