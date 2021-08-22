@@ -277,11 +277,13 @@ function App() {
         </div>
       </div>
 
+      {/* Work History */}
       <div className="row section-row">
         <div className="col-md-6 col-lg-5 offset-md-7">
           <section>
             <h2>Work History</h2>
-            <ul>
+            <ol>
+              <li>Burgess Brian Partners - Work Experience</li>
               <li>National Australia Bank - Intern, Data Scientist
               <ul>
                 <li>Developed a Machine Learning model</li>
@@ -289,8 +291,12 @@ function App() {
                 <li>Explored Natural Language Processing (NLP)</li>
               </ul>
               </li>
-              <li>Burgess Brian Partners - Work Experience</li>
-            </ul>
+              <li>VA Sciences - Full Stack Developer</li>
+              <ul>
+                <li>Managed AWS infrastructure</li>
+                <li>Developed web application using Vue and AWS</li>
+              </ul>
+            </ol>
           </section>
         </div>
       </div>
